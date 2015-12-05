@@ -1,5 +1,6 @@
 /**
  * Stores the needed state inside the this object.
+ * 
  */
 module.exports = Logger;
 
