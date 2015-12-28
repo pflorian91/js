@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Controller Hierarchy</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/ParentController.js"></script>
+    <script src="js/ChildController.js"></script>
+</head>
+<body ng-app="controllerHierarchy">
+
+    <div ng-controller="ParentController">
+        <div ng-controller="ChildController">
+            <a href="#" ng-click="sayHello()">Say hello</a>
+            {{ person }}
+        </div>
+    </div>
+
+</body>
+</html>

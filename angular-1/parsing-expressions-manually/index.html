@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parsing expressions manually</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/ParseController.js"></script>
+</head>
+<body ng-app="parsingExpressions">
+    <div ng-controller="ParseController">
+        <input ng-model="expr" type="text" placeholder="Enter an expression"/>
+        <h2>{{ parsedValue }}</h2>
+    </div>
+</body>
+</html>
