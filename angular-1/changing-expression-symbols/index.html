@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Changing expression symbols</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/InterpolateProviderConfig.js"></script>
+    <script src="js/SymbolController.js"></script>
+</head>
+<body ng-app="expressionSymbols">
+
+    <div ng-controller="SymbolController">
+        It uses <code ng-non-bindable>__ name __</code> instead of {{ name }} to display the variable on scope.
+        <h4>Hello __ name __</h4>
+    </div>
+
+</body>
+</html>
