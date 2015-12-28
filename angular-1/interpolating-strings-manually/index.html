@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manually interpolating strings</title>
+
+    <!-- a touch of bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/InterpolateController.js"></script>
+</head>
+<body ng-app="stringInterpolation">
+
+<div class="container" ng-controller="InterpolateController">
+
+    <div class="content">
+
+        <div class="form-group">
+            <label for="recipient" class="col-lg-2 control-label">Recipient</label>
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="to" type="email" id="recipient" placeholder="Recipient"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="emailBody" class="col-lg-2 control-label">Email body</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="emailBody" ng-model="emailBody"></textarea>
+                <span class="help-block">Just add <code ng-non-bindable>{{ to }}</code> in the body of the email after you complete the recipient..</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <pre>{{ previewText }}</pre>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
