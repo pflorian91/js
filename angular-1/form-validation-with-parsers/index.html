@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation with parsers</title>
+
+    <!-- a touch of bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/ParsersValidationController.js"></script>
+    <script src="js/oneToTenDirective.js"></script>
+</head>
+<body ng-app="parsersValidationApp">
+
+<div class="container" ng-controller="ParsersValidationController">
+
+    <div class="content">
+        <div class="form-group">
+            <label for="myField" class="col-lg-2 control-label">My field</label>
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="myField" id="myField" type="number" one-to-ten/>
+                <span class="help-block">Add numbers in my field to see the parser in action. It will validate only numbers between 1 - 10.</span>
+            </div>
+        </div>
+
+        <p ng-if="myField">You entered a correct number: {{ myField }}. Well done!</p>
+    </div>
+</div>
+
+</body>
+</html>
