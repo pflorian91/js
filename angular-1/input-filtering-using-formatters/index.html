@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input filtering using formatters</title>
+
+    <!-- a touch of bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/InputFilteringController.js"></script>
+    <script src="js/oneToTenDirective.js"></script>
+</head>
+<body ng-app="inputFilteringWithFormatters">
+
+<div class="container" ng-controller="InputFilteringController">
+
+    <div class="content" style="margin-top: 100px;">
+        <div class="row">
+            <div class="form-group">
+                <label for="myField" class="col-lg-2 control-label">View value</label>
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="myField" id="myField" type="text" one-to-ten />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn" ng-click="changeValue('seventy three')">Change value to seventy three</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Model value is <code>{{ myField }}</code>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

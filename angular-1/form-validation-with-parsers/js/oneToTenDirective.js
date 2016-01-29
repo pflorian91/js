@@ -1,7 +1,7 @@
 /**
  * oneToTenDirective created on 1/9/16 5:30 PM.
  *
- * @description Will validate the viewValue on the fields that it is applied.
+ * @description Validates the viewValue on the fields that it is applied.
  * @author Florian Popa <florian@webgenerals.com>
  */
 (function () {
