@@ -10,6 +10,5 @@ gulp.task("default", function () {
 gulp.task('watch', ['default'], function () {
 
     gulp.watch("js/*.js", ['default']);
-    gulp.watch("js/**", ['default']);
 
 });
