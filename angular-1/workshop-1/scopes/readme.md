@@ -18,3 +18,6 @@ TODO
   - Define myModel as it is defined in TrainController
   - Do not define the setNumber and clearNumber methods
   - Observe the results.
+
+
+- Live code on rootScope
