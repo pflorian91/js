@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 1 Workshop template</title>
+
+    <!-- bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- my styles here -->
+
+    <style>
+        .calendar {
+            border: 1px solid blue;
+            display: inline-block;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+        }
+
+        .calendar-header {
+            background: red;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .calendar-body {
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+
+</head>
+<body ng-app="DirectivesModule">
+
+<div class="container">
+    <div class="content">
+
+        <div ng-controller="DirectivesController">
+
+            <div class="form-group">
+                <label for="country" class="col-lg-4 control-label">Country select with ng-repeat</label>
+                <div class="col-lg-8">
+                    <select class="form-control" id="country">
+                        <option ng-repeat="country in myModel.countries">{{ country }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <br />
+
+            <div class="form-group">
+                <label for="country" class="col-lg-4 control-label">Country select with ng-options</label>
+                <div class="col-lg-8">
+                    <select class="form-control" ng-options="country for country in myModel.countries" ng-model="myModel.country">
+                    </select>
+                </div>
+            </div>
+
+            <p>Shows ng-bind directive by country model: <span ng-bind="myModel.country"></span></p>
+
+            <calendar-widget ng-model="myModel.today"></calendar-widget>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- bootstrap -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- angular -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+
+<!-- my scripts here -->
+<script type="text/javascript" src="js/DirectivesModule.js"></script>
+
+</body>
+</html>
