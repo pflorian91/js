@@ -1,0 +1,16 @@
+{
+  "name": "workshop-1",
+  "version": "1.0.0",
+  "description": "AngularJS 1 - Getting up to speed",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bower": "./node_modules/.bin/bower"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  }
+}

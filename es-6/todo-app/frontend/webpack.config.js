@@ -4,6 +4,9 @@ module.exports = {
 		path: "build/js",
 		filename: "script.js"
 	},
+    externals: {
+        "jquery": "jQuery"
+    },
 	module: {
 		loaders: [
 			{
@@ -21,7 +24,11 @@ module.exports = {
 			{
 				test: /\.css/,
 				loaders: ["style", "css"]
-			}
+			},
+            {
+                test: require.resolve("jquery"),
+                loader: "imports?jQuery=jquery"
+            }
 		]
 	}
 };
