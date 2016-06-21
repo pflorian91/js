@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 1 Workshop template</title>
+
+    <!-- bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- my styles here -->
+
+</head>
+<body ng-app="Scopes">
+
+<div class="container">
+    <div class="content">
+
+        <div ng-controller="CarController">
+
+            <div class="well">
+                <p class="lead">In scope of CarController</p>
+                <p>{{ myModel.name }}</p>
+                <p ng-if="myModel.number">{{ myModel.number }}</p>
+
+                <button type="button" class="btn btn-primary" ng-click="setNumber()">Set number</button>
+                <button type="button" class="btn btn-secondary" ng-click="clearNumber()">Clear number</button>
+            </div>
+
+            <div ng-controller="BMWController">
+
+                <div class="well">
+                    <p class="lead">In scope of BMWController, which is children of CarController</p>
+                    <p>{{ myModel.name }}</p>
+                    <p ng-if="myModel.number">{{ myModel.number }}</p>
+
+                    <button type="button" class="btn btn-primary" ng-click="setNumber()">Set number</button>
+                    <button type="button" class="btn btn-secondary" ng-click="clearNumber()">Clear number</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div ng-controller="TrainController">
+
+            <div class="well">
+                <p class="lead">In scope of TrainController</p>
+                <p>{{ myModel.name }}</p>
+                <p ng-if="myModel.number">{{ myModel.number }}</p>
+
+                <button type="button" class="btn btn-primary" ng-click="setNumber()">Set number</button>
+                <button type="button" class="btn btn-secondary" ng-click="clearNumber()">Clear number</button>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+<!-- bootstrap -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- angular -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+
+<!-- my scripts here -->
+<script type="text/javascript" src="js/Scopes.js"></script>
+
+</body>
+</html>
