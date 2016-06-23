@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 1 Workshop template</title>
+
+    <!-- bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- my styles here -->
+
+    <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+display: none !important;
+}
+    </style>
+
+</head>
+<body ng-app="ProjectXApp" ng-cloak>
+
+<!--
+<div ng-include="'views/header.html'"></div>
+-->
+
+<div class="container" ng-controller="BaseController">
+    <div class="content" ng-cloak>
+
+      My location is <span ng-cloak>{{ myLocationIs }}</span>
+
+    </div>
+</div>
+
+<!-- bootstrap -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- angular -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/1.1.1/angular-translate.min.js"></script>
+
+<!-- my scripts here -->
+<script type="text/javascript" src="js/ModuleDefinition.js"></script>
+<script type="text/javascript" src="js/CountryLocationFactory.js"></script>
+<script type="text/javascript" src="js/BaseController.js"></script>
+
+</body>
+</html>
