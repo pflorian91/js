@@ -18,10 +18,13 @@
         <div ng-controller="FiltersController">
 
             <p>Value of today unfiltered: {{ myModel.today }}</p>
-            <p>Value of today filtered in view: {{ myModel.today | date : 'longDate' }}</p>
+            <p>Value of today filtered in view: {{ myModel.today | date : 'longDate' | uppercase }}</p>
             <p>Value of today filtered in controller: {{ myModel.todayFilteredInController }}</p>
             <p>Used uppercase filter: {{ myModel.todayFilteredInController | uppercase }}</p>
-            <p>Used custom filter capitalize: {{ 'hey' | capitalize }}</p>
+            <p>Used custom filter capitalize: {{ 'angular' | capitalize }}</p>
+
+            <p> {{ 'parameters' | splitString : 4 }} </p>
+            {{ myModel.myLongString }}
 
         </div>
 

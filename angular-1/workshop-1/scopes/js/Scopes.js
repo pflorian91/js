@@ -1,18 +1,55 @@
-/**
- * Scopes created on 6/21/16 4:49 PM.
- *
- * @description [To be completed]
- * @author Florian Popa <florian@webgenerals.com>
- */
-(function () {
-    "use strict"; // jshint ignore:line
+
 
     angular
         .module('Scopes', []);
 
     angular
         .module('Scopes')
-        .controller('CarController', ['$scope', function ($scope) {
+
+        // services
+
+        .factory('CarRepositoryFactory', [function () {
+
+            function getCars () {
+              return [
+                'car1',
+                'car2'
+              ];
+            }
+
+            return {
+              getCars: getCars
+            };
+        }])
+
+        .service('CarRepositoryService', [function () {
+            var that = this;
+
+            that.getCars = function () {
+              return [
+                'car1',
+                'car2'
+              ];
+            };
+
+            return that;
+        }])
+
+        .controller('TestWithoutArrayController', function ($scope, CarRepositoryService) {
+            $scope.clockModel = new Date();
+            var cars = CarRepositoryService.getCars();
+            $scope.cars = CarRepositoryService.getCars();
+            console.log(cars);
+
+        })
+
+        .controller('CarController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+
+            $rootScope.clock = new Date();
+
+            $rootScope.updateClock = function () {
+                $rootScope.clock = new Date();
+            };
 
             $scope.myModel = {
                 name: 'Model from car controller'
@@ -55,5 +92,3 @@
             };
 
         }]);
-
-})();

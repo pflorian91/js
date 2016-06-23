@@ -24,11 +24,50 @@
                           '<div class="calendar-body">{{ dateModel | date:"d":"+0000" }} {{ dateModel | date:"MMMM" }}</div>' +
                           '</div>'
             };
-        }]);
+        }])
+        .directive('tableWidget', function () {
+            return {
+              restrict: 'A',
+
+              link: function (scope, element, attrs, controller, transcludeFn) {
+
+                  element.on('click', function(e) {
+                    var keyName = attrs.key;
+
+                    console.log('Before: ', scope.myModel.countriesList);
+
+                    if (keyName === 'country') {
+                      scope.myModel.countriesList.sort(function(a, b){
+                          var keyA = a.country,
+                              keyB = b.country;
+                          if(keyA < keyB) return -1;
+                          if(keyA > keyB) return 1;
+                          return 0;
+                      });
+                    } else {
+                      scope.myModel.countriesList.sort(function(a, b){
+                          var keyA = a.capital,
+                              keyB = b.capital;
+                          if(keyA < keyB) return -1;
+                          if(keyA > keyB) return 1;
+                          return 0;
+                      });
+                    }
+
+                    scope.$apply();
+
+                  });
+              }
+            };
+        });
 
     angular
         .module('DirectivesModule')
         .controller('DirectivesController', ['$scope', function ($scope) {
+
+          $scope.shouldIShowTheSelect = function () {
+            return true;
+          };
 
             $scope.myModel = {
                 countries: [
@@ -46,7 +85,21 @@
                     'Azerbaijan',
                 ],
                 country: 'Andorra',
-                today: new Date()
+                today: new Date(),
+                countriesList: [
+                  {
+                    country: "Romania",
+                    capital: "Bucharest"
+                  },
+                  {
+                    country: "France",
+                    capital: "Paris"
+                  },
+                  {
+                    country: "Belgium",
+                    capital: "Brussels"
+                  }
+                ]
             };
 
         }]);

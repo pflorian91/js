@@ -15,15 +15,40 @@
 <div class="container">
     <div class="content">
 
+      <div ng-controller='TestWithoutArrayController'>
+        <!-- starts scope of TestWithoutArrayController -->
+
+          {{ clockModel }}
+
+          <ul>
+            <li ng-repeat="car in cars">
+              {{ car }}
+            </li>
+          </ul>
+
+          {{ cars }}
+
+        <!-- ends scope of TestWithoutArrayController -->
+      </div>
+
         <div ng-controller="CarController">
 
+
+
             <div class="well">
+
+{{ clock }}
+
                 <p class="lead">In scope of CarController</p>
                 <p>{{ myModel.name }}</p>
                 <p ng-if="myModel.number">{{ myModel.number }}</p>
 
                 <button type="button" class="btn btn-primary" ng-click="setNumber()">Set number</button>
                 <button type="button" class="btn btn-secondary" ng-click="clearNumber()">Clear number</button>
+
+
+
+
             </div>
 
             <div ng-controller="BMWController">
@@ -51,11 +76,13 @@
                 <button type="button" class="btn btn-primary" ng-click="setNumber()">Set number</button>
                 <button type="button" class="btn btn-secondary" ng-click="clearNumber()">Clear number</button>
             </div>
-            
+
         </div>
 
     </div>
 </div>
+
+<button type="button" class="btn btn-info" ng-click="updateClock()">Update clock</button>
 
 <!-- bootstrap -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

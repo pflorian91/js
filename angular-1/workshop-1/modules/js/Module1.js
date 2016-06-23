@@ -12,7 +12,7 @@
     * It is a setter
     * */
     angular
-        .module('Module1', []);
+        .module('Module1', ['Module2']);
 
     /*
     * This is a getter

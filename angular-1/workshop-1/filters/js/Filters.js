@@ -16,6 +16,16 @@
             return function(value) {
                 return value.charAt(0).toUpperCase() + value.slice(1);
             };
+        })
+        .filter('splitString', function () {
+          return function (myString, numberOfPieces) {
+            var lengthOfPieces = Math.round(myString.length / numberOfPieces);
+            var finalString = '';
+            for ( var i = 0; i < myString.length; i += lengthOfPieces ) {
+                finalString += myString.slice(i, i + lengthOfPieces) + " ";
+            }
+            return finalString;
+          };
         });
 
     angular
@@ -26,7 +36,8 @@
 
             $scope.myModel = {
                 today: today,
-                todayFilteredInController: $filter('date')(today, 'longDate')
+                todayFilteredInController: $filter('date')(today, 'longDate'),
+                myLongString: $filter('splitString')('Seems as though javascript requires the split to use single quotes', 10)
             };
 
         }]);

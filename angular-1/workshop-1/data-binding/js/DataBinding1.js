@@ -19,12 +19,14 @@
                 type: true
             };
 
+            $scope.testAngular = 'Hello there!';
+
             console.log($scope.myModel);
 
             $scope.saveChanges = function () {
                 console.log($scope.myModel);
             };
-            
+
         }]);
 
 })();

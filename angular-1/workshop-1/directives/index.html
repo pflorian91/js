@@ -47,15 +47,29 @@
                 </div>
             </div>
 
+            <table class="table">
+              <thead>
+                <tr>
+                  <th table-widget data-key="country">Country</th>
+                  <th table-widget data-key="capital">Capital</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="countryObj in myModel.countriesList">
+                  <td>{{ countryObj.country }}</td>
+                  <td>{{ countryObj.capital }}</td>
+                </tr>
+              </tbody>
+            </table>
+
             <br />
             <br />
             <br />
 
-            <div class="form-group">
+            <div class="form-group" ng-if="shouldIShowTheSelect()">
                 <label for="country" class="col-lg-4 control-label">Country select with ng-options</label>
                 <div class="col-lg-8">
-                    <select class="form-control" ng-options="country for country in myModel.countries" ng-model="myModel.country">
-                    </select>
+                    <select class="form-control" ng-options="country for country in myModel.countries" ng-model="myModel.country"></select>
                 </div>
             </div>
 
